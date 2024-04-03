@@ -2,6 +2,8 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+
+    /* border: 2px solid red; */
 }
 body{
     height:100vh;
@@ -14,7 +16,7 @@ body{
 .container{
     height: 80vh;
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     flex-direction:column;
     gap:30px;
@@ -23,8 +25,10 @@ body{
 .game{
     height: 60vmin;
     width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    /* display flex was causing problems in lower widths 😎 */
+    grid-template-columns: 1fr 1fr 1fr;
+
     justify-content: center;
     align-items: center;
     gap:10px;
@@ -59,7 +63,8 @@ h1{
 }
 #msg{
     height:200px;
-    width: 500px;
+    /* width: 500px; */
+    /* removed because causing problem in lower widths */
     color:darkgreen;
     font-size:2rem;
     font-weight: 700;
